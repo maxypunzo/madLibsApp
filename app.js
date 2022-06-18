@@ -4,11 +4,14 @@
     let userInputs = []; // array to store user answer
     let questionArray = ["Eneter year", "Name f Computer pioneer", "what he was working on"];
     let questioncounter = 0;
+    let questionTotal = 3;
     for (var x = questionArray.length; x > 0; x--) {
-        userInputs[x] = prompt(questionArray[x]); //prompt each replacement
-        console.log(questionArray[x]);
-        console.log(x);
+        userInputs[questioncounter] = prompt(questionArray[questioncounter]); //prompt each replacement
+        console.log(questionArray[questioncounter] + `(${questionTotal} questions left)`);
+        console.log(userInputs)
+        console.log(questioncounter);
         questioncounter += 1; // increament by 1;
+        questionTotal -= 1; //decreament questionTotal
     }
     console.log(userInputs);
 })();
