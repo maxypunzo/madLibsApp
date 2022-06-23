@@ -1,30 +1,38 @@
 // "use strict"
 
 (function() {
-    let userInputs = []; // array to store user answer
-    let questionArray = ["Eneter year", "Name f Computer pioneer", "what he was working on"];
+    let userInputs = []; 
+    let questionArray = ["Enter Invnsion year", "Name of WWW pioneer", "what he was working on"];
     let questioncounter = 0;
     let questionTotal = 3;
-    for (var x = questionArray.length; x > 0; x--) {
-        userInputs[questioncounter] = prompt(questionArray[questioncounter]); //prompt each replacement
+    for (var i = questionArray.length; i > 0; i--) {
+        userInputs.push(prompt(questionArray[questioncounter]) + `(${questionTotal} questions left)`); 
+        if(userInputs[questioncounter] === ""){
+            console.log("the user didn't write anything");
+            break;
+        }
+        questionTotal -= 1;  
         console.log(questionArray[questioncounter] + `(${questionTotal} questions left)`);
-        console.log(userInputs)
-        console.log(questioncounter);
-        questioncounter += 1; // increament by 1;
-        questionTotal -= 1; //decreament questionTotal
+        console.log(questionArray.length);
+        console.log(userInputs[i]);
+        // questioncounter += 1; 
+        let numberOfQuestions = i; 
+        // console.log("Loop count" + i);
+        console.log("Question Counter" + questioncounter);
     }
-    console.log(userInputs);
-})();
-
-for (let x = 0; x < 3; x++) {
-    let originalStory = `In  >${userInputs[0]} /*templet literal*/, computer pioneer  
+  alert('All done! Ready for your totally-accurate, not-at-all confusing history of tech??');
+  let originalStory = `In  >${userInputs[0]}, computer pioneer  
     >${userInputs[1]} found herself working on a  >${userInputs[2]}. 
     Word got out that the team had "debugged" the  >${userInputs[2]}`;
-    console.log(originalStory);
-    let numberOfQuestions = x; //number of unique replacements
-}
 
-// let originalStory = `In 1980, computer pioneer Tom Ben Lee found herself working on a Error. 
-// Word got out that the team had "debugged" the Issue`;
+    console.log(originalStory);
+    document.write(originalStory);
+    document.write(`In  >${userInputs[0]}, computer pioneer  
+    >${userInputs[1]} found herself working on a  >${userInputs[2]}. 
+    Word got out that the team had "debugged" the  >${userInputs[2]}`);
+
+    // let originalStory = `In 1980, computer pioneer Tom Ben Lee found herself working on a Error. 
+// Word got out that the team had "debugged" the Error`;
 // ${userInputs[x]}
+})();
 
